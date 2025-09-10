@@ -160,8 +160,9 @@ int Echo_core(int sockfd, int (*ui)(pack_t*), int type)
     //-------------------------------服务器返回数据包处理---------------------------------
 }
 
-
-/**读取stdin函数*/
+/**
+ * 读取stdin函数
+ */
 char *s_gets(char buf[], int len)
 {
     char *find;

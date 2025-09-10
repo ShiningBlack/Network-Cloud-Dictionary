@@ -2,8 +2,8 @@
 #include "ui.h"
 #include "core.h"
 
-
 char username[32] = {0};
+
 int main(int argc, const char *argv[])
 {
     int pos;
@@ -13,7 +13,7 @@ int main(int argc, const char *argv[])
 
     //------------------------------------连接服务器----------------------------------
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
-    if (sockfd == -1){
+    if (sockfd == -1) {
         perror("socket");
         exit(-1);
     }
@@ -26,7 +26,7 @@ int main(int argc, const char *argv[])
         perror("in main function connect");
         exit(-1);
     }
-    printf("connect ok\n");
+    printf("Connecting to the server successfully\n");
     //------------------------------------连接服务器----------------------------------
 
     //------------------------------------客户端处理----------------------------------

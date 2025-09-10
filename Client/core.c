@@ -1,17 +1,15 @@
 #include "core.h"
 
-
-/*
-    UI显示：收集数据
-    打包发送手机的数据
-    接收数据包并进行处理
-
-    失败返回-1
-    失败数据包返回 -1
-
-    成功返回0
-*/
+/**
+ * @details
+ *  1. UI显示：收集数据
+ *  2. 打包发送手机的数据
+ *  3. 接收数据包并进行处理
+ * 
+ * @return 成功返回0，否则返回-1
+ */
 extern char username[32];
+
 int Echo_core(int sockfd, int (*ui)(pack_t*), int type)
 {
     int i, j;
@@ -70,15 +68,15 @@ int Echo_core(int sockfd, int (*ui)(pack_t*), int type)
     nbytes = recv(sockfd, &retp, sizeof(retp), 0);
 
     //-------------------------------服务器返回数据包处理---------------------------------
-    if (nbytes == -1){
+    if (nbytes == -1) {
         perror("in Login_core function recv");
         return -1;
-    }else if (nbytes == 0){
+    } else if (nbytes == 0) {
         fprintf(stderr, "server quit\n");
         exit(-1);
-    }else{
-        if (retp.echo == ECHO_SUC){
-            switch (pack.type){
+    } else {
+        if (retp.echo == ECHO_SUC) {
+            switch (pack.type) {
                 //---------------登录数据包---------------------------------------
                 case LOGIN_APPL:
                     if (retp.type == LOGIN_ECHO){

@@ -22,15 +22,14 @@
 #define ECHO_SUC     0
 #define ECHO_ERR     1
 
-
 /**服务器根据把不同的消息类型来处理消息*/
-typedef struct pack{
-    int  echo;              /**成功失败*/
-    int  type;              /**消息类型*/
+typedef struct pack {
+    int  echo;              /* 成功失败 */
+    int  type;              /* 消息类型 */
     char username[LEN];     
     char password[LEN];
-    char msg[MSG];          /**消息*/
-}pack_t;
+    char msg[MSG];          /* 消息 */
+} pack_t;
 
 char *s_gets(char buf[], int len);
 int Echo_core(int sockfd, int (*ui)(pack_t*), int type);

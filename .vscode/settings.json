@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "types.h": "c",
+        "inet.h": "c",
+        "core.h": "c",
+        "includes.h": "c",
+        "in.h": "c"
+    }
+}

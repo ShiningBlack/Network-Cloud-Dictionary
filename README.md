@@ -1,5 +1,6 @@
 # 基于TCP和epoll多路复用的电子词典项目
 此项目主要实现了注册和登录和查询单词的功能，服务器使用epoll多路复用实现一个服务器服务多个客户端。服务器方面的单词数据通过sqlite3数据库存储，客户端主要通过建立的TCP连接发送指令，从而实现登录、注册、查询功能。
+
 ## 服务器端介绍
 ![image](https://user-images.githubusercontent.com/51869117/228161716-0142e598-8457-4f6f-a424-fbc64d377b9e.png)
 - myserver 是服务器端的二进制可执行文件
@@ -17,3 +18,16 @@
 ![Snipaste_2023-03-28_09-22-24](https://user-images.githubusercontent.com/51869117/228163493-8cbe2a19-ed44-4581-b72a-e32137b1504d.png)
 ![Snipaste_2023-03-28_09-22-35](https://user-images.githubusercontent.com/51869117/228163528-baf170fc-aaae-4539-b8dd-c8bd9f52729d.png)
 ![Snipaste_2023-03-28_09-23-16](https://user-images.githubusercontent.com/51869117/228163535-c85ce53e-1192-49ab-95da-67e59b4e6a30.png)
+
+# 前置条件
+```bash
+# 更新软件包
+sudo apt-get update
+# 安装gcc
+sudo apt install gcc
+# 安装make
+sudo apt install make
+# 安装sqlite3以及开发工具包
+sudo apt-get install sqlite3
+sudo apt-get install libsqlite3-dev
+```
